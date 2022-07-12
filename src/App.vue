@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import redirect from './utils/request'
-redirect.get('homr')
+import axios from './utils/request'
+
 </script>
 
 <template>
-<div>
-  <h1>移动端头条</h1>
-  <van-button>默认按钮</van-button>
-</div>
+  <div id="app">
+    <!-- 路由出口 -->
+    <router-view></router-view>
+  </div>
 </template>
 
 <style>
