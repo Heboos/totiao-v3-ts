@@ -6,6 +6,11 @@ export default createRouter({
       path: '/login',
       name: 'login',
       component: () => import('../views/login/login.vue')
-    }
+    },
+    {
+      path: '/',
+      name: 'layout',
+      component: () => import('../views/layout/layout.vue')
+    },
   ]
 })

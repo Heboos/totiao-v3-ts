@@ -1,6 +1,9 @@
 <script name="login" setup lang='ts'>
-import { reactive, ref } from 'vue';
-import { login } from '../../api/user';
+import { Toast } from 'vant';
+import { reactive, ref } from 'vue'
+import router from '../../router';
+import useStore from '../../store/index'
+const { userList } = useStore() 
 
 const onSubmit = (val: any) => {
   console.log('验证成功')
@@ -11,14 +14,15 @@ const onFailed = (val: any) => {
 }
 const doLogin = async() => {
   // 具体的登录逻辑
-  try {
-    const res = await login(user)
-    console.log(res)
-    alert('登录成功')
-  } catch (err) {
-    console.log(err)
-    alert('登录失败')
-  }
+  Toast.loading({
+    message: '加载中...',
+    forbidClick: true,
+  });
+  await userList.getBannerList(user)
+  Toast.success('登录成功')
+  // 路由跳转至首页
+  router.push('/')
+
 }
 const user = reactive({
   mobile: '18912345678',
