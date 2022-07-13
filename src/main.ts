@@ -7,6 +7,7 @@ import router from './router/index'
 import { createPinia } from 'pinia'
 // 省略其它...
 // 引入全局样式
+import './styles/index.less' // 全局样式
 
 import './styles/index.less'
 const app = createApp(App)
