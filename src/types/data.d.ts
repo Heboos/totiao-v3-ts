@@ -29,3 +29,10 @@ export type NewsRes = {
     message: string
   }
 }
+// 不感兴趣返回值
+export type noList = {
+  data: {
+      target: string;
+  };
+  message: string;
+}

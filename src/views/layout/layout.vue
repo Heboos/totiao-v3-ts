@@ -3,7 +3,7 @@ import { ref , watch } from 'vue';
 import useStore from '../../store/index'
 const { userList } = useStore() 
 const route = ref(0)
-watch(() =>route,()=>{})
+watch(() =>route,()=>{},{deep:true})
 </script>
 
 <template>
